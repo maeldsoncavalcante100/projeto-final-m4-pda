@@ -1,0 +1,17 @@
+{
+  "name": "projeto-final-m4-pda",
+  "version": "1.0.0",
+  "description": "Projeto final Módulo 4 - Programadores do Amanhã",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
+  }
+}
