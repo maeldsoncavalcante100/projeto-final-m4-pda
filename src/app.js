@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import { Mongo } from "./database/mongo.js";
 import { config } from "dotenv";
+import equilibriumRoute from "./routes/equilibriumRoute.js"
 
 config();
 
@@ -18,7 +19,9 @@ async function main() {
 	app.use(express.json());
 	app.use(cors());
 
-	
+	// Configura as rotas para o MoodRecord
+	app.use("/equilibrium", equilibriumRoute);
+
 
 	app.get("/", (_req, res) => {
 		res.send({
