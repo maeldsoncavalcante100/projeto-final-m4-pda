@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import { Mongo } from "./database/mongo.js";
 import { config } from "dotenv";
-import equilibriumRoute from "./routes/equilibriumRoute.js"
+import diaryRoute from "./diary/routes/diaryRoute.js";
 
 config();
 
@@ -20,7 +20,7 @@ async function main() {
 	app.use(cors());
 
 	// Configura as rotas para o MoodRecord
-	app.use("/equilibrium", equilibriumRoute);
+	app.use("/diary", diaryRoute);
 
 
 	app.get("/", (_req, res) => {
