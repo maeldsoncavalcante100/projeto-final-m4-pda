@@ -2,8 +2,10 @@ import express from "express";
 import cors from "cors";
 import { Mongo } from "./database/mongo.js";
 import { config } from "dotenv";
+import requireDir from "require-dir";
 import diaryRoute from "./diary/routes/diaryRoute.js";
 import usersRoute from "./users/routes/usuariosRoutes.js"
+
 
 config();
 
@@ -17,9 +19,10 @@ async function main() {
 
 	console.log(mongoConnection);
 
+	requireDir('./src/users/models')
+
 	app.use(express.json());
 	app.use(cors());
-
 	// Configura as rotas para o diary 
 	app.use("/diary", diaryRoute);
 	app.use("/users", usersRoute);
