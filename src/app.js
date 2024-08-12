@@ -19,7 +19,7 @@ async function main() {
 	app.use(express.json());
 	app.use(cors());
 
-	// Configura as rotas para o MoodRecord
+	// Configura as rotas para o diary 
 	app.use("/diary", diaryRoute);
 
 
