@@ -29,7 +29,7 @@ async function main() {
 		res.send({
 			success: true,
 			statusCode: 200,
-			body: "Welcome to the MoodRecord API",
+			body: "Welcome to the Equilibrium API",
 		});
 	});
 
