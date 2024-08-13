@@ -4,6 +4,7 @@ import { Mongo } from "./database/mongo.js";
 import { config } from "dotenv";
 import diaryRoute from "./diary/routes/diaryRoute.js";
 
+
 config();
 
 async function main() {
