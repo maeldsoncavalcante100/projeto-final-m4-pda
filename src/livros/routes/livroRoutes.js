@@ -1,4 +1,5 @@
 import express from 'express';
+
 import { 
   allLivros, 
   livroById, 
@@ -9,10 +10,11 @@ import {
 
 const router = express.Router();
 
-router.post('/livros', createLivros);
+
 router.get('/livros', allLivros);
 router.get('/livros/:id', livroById);
+router.post('/livro', createLivros);
 router.put('/livros/:id', updateLivro);
-router.delete('/livros/:id', deleteLivro);
+router.delete('/livro/:id', deleteLivro);
 
 export default router;
