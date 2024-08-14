@@ -1,9 +1,9 @@
-import express, { Router } from "express";
+import express from "express";
 import cors from "cors";
 import { Mongo } from "./database/mongo.js";
 import { config } from "dotenv";
 import diaryRoute from "./diary/routes/diaryRoute.js";
-import router from "./livros/routes/livroRoutes.js";
+import { router } from "./livros/routes/livroRoutes.js";
 
 config();
 
@@ -22,7 +22,7 @@ async function main() {
 
 	// Configura as rotas para o diary 
 	app.use("/diary", diaryRoute);
-	app.use("/leitura", router)
+	app.use(router)
 
 
 	app.get("/", (_req, res) => {

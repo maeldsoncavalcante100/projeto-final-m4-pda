@@ -17,4 +17,4 @@ router.post('/livro', createLivros);
 router.put('/livros/:id', updateLivro);
 router.delete('/livro/:id', deleteLivro);
 
-export default router;
+export { router };
