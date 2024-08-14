@@ -5,6 +5,7 @@ import { config } from "dotenv";
 import diaryRoute from "./diary/routes/diaryRoute.js";
 import { router } from "./livros/routes/livroRoutes.js";
 
+
 config();
 
 async function main() {

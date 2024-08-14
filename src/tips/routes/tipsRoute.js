@@ -1,7 +1,7 @@
 //dicasRoute
 const express = require('express');
 const router = express.Router();
-const userController = require('./userController');
+const userController = require('../controllers/tipsController.js');
 
 router.get('/dicas', userController.getSaudeMentalDicas);
 router.post('/usuarios', userController.createUser);
