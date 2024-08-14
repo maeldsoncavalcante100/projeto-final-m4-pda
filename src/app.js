@@ -2,7 +2,6 @@ import express from "express";
 import cors from "cors";
 import { Mongo } from "./database/mongo.js";
 import { config } from "dotenv";
-//const requireDir = require('require-dir')
 import diaryRoute from "./diary/routes/diaryRoute.js";
 import { usuariosRouter } from "./users/routes/usuariosRoutes.js"
 import { routerLivro} from "./livros/routes/livroRoutes.js";
@@ -20,7 +19,6 @@ async function main() {
 
 	console.log(mongoConnection);
 
-	//requireDir('./src/users/models')
 
 	app.use(express.json());
 	app.use(cors());

@@ -1,8 +1,9 @@
 import Usuario from '../models/usuarios.js';
 
+
 export const allUsuarios = async (req, res) => {
   try {
-    const usuarios = await Livro.find();
+    const usuarios = await Usuario.find();
     res.send(usuarios);
   } catch (err) {
     res.status(500).send(err);
@@ -48,3 +49,4 @@ export const deleteUsuario = async (req, res) => {
     res.status(500).send(err);
   }
 };
+

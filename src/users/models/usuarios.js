@@ -1,5 +1,4 @@
-import mongoose, { Schema, model } from 'mongoose';
-//import mongoosePaginate from 'mongoose-paginate';
+import { Schema, model } from 'mongoose';
 
 const UserSchema = new Schema({
     nome: {
@@ -22,18 +21,16 @@ const UserSchema = new Schema({
         required: true
     },
     endereco: {
-        cidade: {
-            type: String,
-            required: true,
-            minlength: 3,
-            maxlength: 100
-        },
-        estado: {
-            type: String,
-            required: true,
-            minlength: 2,
-            maxlength: 2
-        }
+        type: String,
+        required: true
+    },
+    cidade: {
+        type: String,
+        required: true
+    },
+    estado: {
+        type: String,
+        required: true
     },
     registro: {
         type: Date,
@@ -41,7 +38,6 @@ const UserSchema = new Schema({
     }
 });
 
-//UserSchema.plugin(mongoosePaginate);
 
 const Usuario = model('Usuario', UserSchema);
 
