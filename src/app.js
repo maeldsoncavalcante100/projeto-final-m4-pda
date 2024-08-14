@@ -5,7 +5,8 @@ import { config } from "dotenv";
 //const requireDir = require('require-dir')
 import diaryRoute from "./diary/routes/diaryRoute.js";
 import { usuariosRouter } from "./users/routes/usuariosRoutes.js"
-
+import { routerLivro} from "./livros/routes/livroRoutes.js";
+import  {router}  from "./satisfaction/routes/satisfactionRoutes.js"
 
 config();
 
@@ -24,7 +25,9 @@ async function main() {
 	app.use(express.json());
 	app.use(cors());
 	
-	app.use("/diary", diaryRoute);
+	app.use("/api/diary", diaryRoute);
+    app.use(routerLivro);
+    app.use(router);
 	app.use(usuariosRouter);
 
 
@@ -32,7 +35,7 @@ async function main() {
 		res.send({
 			success: true,
 			statusCode: 200,
-			body: "Welcome to the MoodRecord API",
+			body: "Welcome to the Equilibrium API",
 		});
 	});
 
