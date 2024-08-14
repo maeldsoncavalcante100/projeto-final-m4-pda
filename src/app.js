@@ -3,8 +3,8 @@ import cors from "cors";
 import { Mongo } from "./database/mongo.js";
 import { config } from "dotenv";
 import diaryRoute from "./diary/routes/diaryRoute.js";
-import { router } from "./livros/routes/livroRoutes.js";
-
+import { routerLivro} from "./livros/routes/livroRoutes.js";
+import  {router}  from "./satisfaction/routes/satisfactionRoutes.js"
 
 config();
 
@@ -23,8 +23,8 @@ async function main() {
 
 	// Configura as rotas para o diary 
 	app.use("/diary", diaryRoute);
-	app.use(router)
-
+    app.use(routerLivro);
+	app.use(router);
 
 	app.get("/", (_req, res) => {
 		res.send({

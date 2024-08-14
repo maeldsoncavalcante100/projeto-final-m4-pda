@@ -8,13 +8,13 @@ import {
   deleteLivro 
 } from '../controller/livroController.js';
 
-const router = express.Router();
+const routerLivro = express.Router();
 
 
-router.get('/livros', allLivros);
-router.get('/livros/:id', livroById);
-router.post('/livro', createLivros);
-router.put('/livros/:id', updateLivro);
-router.delete('/livro/:id', deleteLivro);
+routerLivro.get('/livros', allLivros);
+routerLivro.get('/livros/:id', livroById);
+routerLivro.post('/livro', createLivros);
+routerLivro.put('/livros/:id', updateLivro);
+routerLivro.delete('/livro/:id', deleteLivro);
 
-export { router };
+export { routerLivro };
