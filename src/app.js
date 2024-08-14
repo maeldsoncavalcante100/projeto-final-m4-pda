@@ -22,13 +22,10 @@ async function main() {
 	app.use(cors());
 
 	// Configura as rotas para o diary 
-<<<<<<< HEAD
+
 	app.use("/api/diary", diaryRoute);
     app.use(routerLivro);
 	app.use(router);
-=======
-	
->>>>>>> diary
 
 	app.get("/", (_req, res) => {
 		res.send({
