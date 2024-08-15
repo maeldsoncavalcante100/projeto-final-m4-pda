@@ -1,15 +1,14 @@
 import { Schema, model } from "mongoose";
 
-// Enum para estados emocionais
+
 const moodEnum = ['happy', 'sad', 'angry', 'excited', 'anxious'];
 
-// Define o esquema para o modelo de entradas do diário
 const DiarySchema = new Schema(
   {
     date: {
       type: Date,
       required: [true, "Please enter the date of the entry"],
-      default: Date.now, // Define a data atual como padrão
+      default: Date.now, 
     },
     mood: {
       type: String,
@@ -28,15 +27,15 @@ const DiarySchema = new Schema(
     },
     reflection: {
       type: String,
-      trim: true, // Remove espaços em branco no início e no fim
+      trim: true, 
       required: [true, "Please enter your reflection"],
     },
     analysis: {
-      type: String, // Análise de texto para identificar mudanças emocionais
+      type: String, 
     }
   },
   {
-    timestamps: true, // Adiciona campos de data de criação e atualização automaticamente
+    timestamps: true, 
   }
 );
 
