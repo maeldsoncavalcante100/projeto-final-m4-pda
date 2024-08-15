@@ -31,3 +31,6 @@ const SatisfactionSchema = new Schema(
 const Satisfaction = model("Satisfaction", SatisfactionSchema);
 
 export default Satisfaction;
+
+
+
