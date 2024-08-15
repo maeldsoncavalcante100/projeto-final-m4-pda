@@ -6,6 +6,7 @@ import diaryRoute from "./diary/routes/diaryRoute.js";
 import { usuariosRouter } from "./users/routes/usuariosRoutes.js"
 import { routerLivro} from "./livros/routes/livroRoutes.js";
 import  {router}  from "./satisfaction/routes/satisfactionRoutes.js"
+import {routerTips} from "./tips/routes/tipsRoute.js"
 
 config();
 
@@ -27,7 +28,7 @@ async function main() {
     app.use(routerLivro);
     app.use(router);
 	app.use(usuariosRouter);
-
+	app.use(routerTips);
 
 	app.get("/", (_req, res) => {
 		res.send({

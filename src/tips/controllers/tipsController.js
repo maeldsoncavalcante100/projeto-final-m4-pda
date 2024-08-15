@@ -1,7 +1,6 @@
-const mongoose = require('mongoose');
-const User = mongoose.model('Usuario');
+import Dicas from '../models/tipsModel.js';
 
-exports.getSaudeMentalDicas = (req, res) => {
+export const getSaudeMentalDicas = (req, res) => {
     res.json([
         "Respire fundo e faça uma pausa.",
         "Desconecte-se das tarefas por um tempo.",
@@ -9,30 +8,30 @@ exports.getSaudeMentalDicas = (req, res) => {
     ]);
 };
 
-exports.createUser = async (req, res) => {
-    const user = new User(req.body);
+export const createDicas = async (req, res) => {
+    const dicas = new Dicas(req.body);
     try {
-        await user.save();
-        res.status(201).json(user);
+        await dicas.save();
+        res.status(201).json(dicas);
     } catch (err) {
         res.status(400).json({ error: err.message });
     }
 };
 
-exports.getUsers = async (req, res) => {
+export const getDicas = async (req, res) => {
     try {
-        const users = await User.find();
-        res.json(users);
+        const dicas = await User.find();
+        res.json(dicas);
     } catch (err) {
         res.status(500).json({ error: err.message });
     }
 };
 
-exports.getUserById = async (req, res) => {
+export const getDicasById = async (req, res) => {
     try {
-        const user = await User.findById(req.params.id);
+        const dicas = await Dicas.findById(req.params.id);
         if (user) {
-            res.json(user);
+            res.json(dicas);
         } else {
             res.status(404).json({ error: 'Usuário não encontrado' });
         }
@@ -41,11 +40,11 @@ exports.getUserById = async (req, res) => {
     }
 };
 
-exports.updateUser = async (req, res) => {
+export const updateDicas = async (req, res) => {
     try {
-        const user = await User.findByIdAndUpdate(req.params.id, req.body, { new: true });
-        if (user) {
-            res.json(user);
+        const dicas = await Dicas.findByIdAndUpdate(req.params.id, req.body, { new: true });
+        if (dicas) {
+            res.json(dicas);
         } else {
             res.status(404).json({ error: 'Usuário não encontrado' });
         }
@@ -54,10 +53,10 @@ exports.updateUser = async (req, res) => {
     }
 };
 
-exports.deleteUser = async (req, res) => {
+export const deleteDicas = async (req, res) => {
     try {
-        const user = await User.findByIdAndDelete(req.params.id);
-        if (user) {
+        const dicas = await Dicas.findByIdAndDelete(req.params.id);
+        if (dicas) {
             res.json({ message: 'Usuário deletado com sucesso' });
         } else {
             res.status(404).json({ error: 'Usuário não encontrado' });

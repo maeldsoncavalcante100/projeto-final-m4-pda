@@ -1,13 +1,22 @@
-//dicasRoute
-const express = require('express');
-const router = express.Router();
-const userController = require('../controllers/tipsController.js');
+import express from 'express';
 
-router.get('/dicas', userController.getSaudeMentalDicas);
-router.post('/usuarios', userController.createUser);
-router.get('/usuarios', userController.getUsers);
-router.get('/usuarios/:id', userController.getUserById);
-router.put('/usuarios/:id', userController.updateUser);
-router.delete('/usuarios/:id', userController.deleteUser);
+import { 
+    getSaudeMentalDicas, 
+    createDicas, 
+    getDicas, 
+    getDicasById, 
+    updateDicas,
+    deleteDicas
+} from '../controllers/tipsController.js';
 
-module.exports = router;
+const routerTips = express.Router();
+
+routerTips.get('/dica', getSaudeMentalDicas);
+routerTips.post('/dicas', createDicas);
+routerTips.get('/dicas', getDicas);
+routerTips.get('/dicas/:id', getDicasById);
+routerTips.put('/dicas/:id',updateDicas);
+routerTips.delete('/dicas/:id', deleteDicas);
+
+export { routerTips };
+
