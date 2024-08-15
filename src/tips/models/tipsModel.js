@@ -1,7 +1,7 @@
 import { Schema, model } from 'mongoose';
 
 const dicasSchema = new Schema({
-    
+
   title: {
     type: String,
     required: true,

@@ -20,7 +20,7 @@ export const createDicas = async (req, res) => {
 
 export const getDicas = async (req, res) => {
     try {
-        const dicas = await User.find();
+        const dicas = await Dicas.find();
         res.json(dicas);
     } catch (err) {
         res.status(500).json({ error: err.message });
@@ -30,7 +30,7 @@ export const getDicas = async (req, res) => {
 export const getDicasById = async (req, res) => {
     try {
         const dicas = await Dicas.findById(req.params.id);
-        if (user) {
+        if (dicas) {
             res.json(dicas);
         } else {
             res.status(404).json({ error: 'Usuário não encontrado' });
