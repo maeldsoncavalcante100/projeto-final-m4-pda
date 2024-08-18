@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import { config } from "dotenv";
+
 
 export const Mongo = {
     async connect(mongoConnectionString) {
