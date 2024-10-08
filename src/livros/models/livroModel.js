@@ -1,4 +1,4 @@
-import { Schema, model } from 'mongoose';
+import { Schema, model } from "mongoose";
 
 const livroSchema = new Schema({
   name: {
@@ -16,8 +16,12 @@ const livroSchema = new Schema({
     type: Date,
     default: Date.now,
   },
+  link: {
+    type: String,
+    required: true,
+  },
 });
 
-const Livro = model('Livro', livroSchema);
+const Livro = model("Livro", livroSchema);
 
 export default Livro;
